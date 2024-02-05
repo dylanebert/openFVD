@@ -28,6 +28,7 @@
 
 CONFIG	+= qt
 QT       += core gui widgets printsupport opengl
+DEFINES += GLM_ENABLE_EXPERIMENTAL
 
 #CONFIG += exceptions \
 #          rtti
@@ -158,6 +159,7 @@ unix:!macx {
     INCLUDEPATH += "./ui/"
     INCLUDEPATH += "./renderer/"
     INCLUDEPATH += "./core/"
+    INCLUDEPATH += "./glm/"
 
     LIBS += -lGL
     LIBS += -lGLU
