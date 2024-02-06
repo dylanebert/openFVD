@@ -5,7 +5,7 @@ Renderer: D3D12 (NVIDIA GeForce RTX 4090)
 Version: 4.2 (Compatibility Profile) Mesa 23.0.4-0ubuntu1~22.04.1
 Samples: 1 4
 GLEW initialization successful!
-glViewWidget(0x55a6b705cfd0, name="GraphicsView")
+glViewWidget(0x55e3fb55ac20, name="GraphicsView")
 Any of the framebuffer attachment points are framebuffer incomplete.
 Any of the framebuffer attachment points are framebuffer incomplete.
 Any of the framebuffer attachment points are framebuffer incomplete.
