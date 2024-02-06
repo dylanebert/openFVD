@@ -8,7 +8,7 @@ DEFINES += GLM_ENABLE_EXPERIMENTAL
 SOURCES += \
     ../core/mnode.cpp \
     ../core/exportfuncs.cpp \
-    mnode_test.cpp
+    tests.cpp
 
 HEADERS += \
     ../core/mnode.h

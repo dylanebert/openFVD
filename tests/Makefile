@@ -54,10 +54,10 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../core/mnode.cpp \
 		../core/exportfuncs.cpp \
-		mnode_test.cpp 
+		tests.cpp 
 OBJECTS       = mnode.o \
 		exportfuncs.o \
-		mnode_test.o
+		tests.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -137,7 +137,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		tests.pro ../core/mnode.h ../core/mnode.cpp \
 		../core/exportfuncs.cpp \
-		mnode_test.cpp
+		tests.cpp
 QMAKE_TARGET  = tests
 DESTDIR       = 
 TARGET        = tests
@@ -322,7 +322,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../core/mnode.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../core/mnode.cpp ../core/exportfuncs.cpp mnode_test.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../core/mnode.cpp ../core/exportfuncs.cpp tests.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1195,7 +1195,7 @@ exportfuncs.o: ../core/exportfuncs.cpp ../core/exportfuncs.h \
 		../glm/glm/gtx/range.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o exportfuncs.o ../core/exportfuncs.cpp
 
-mnode_test.o: mnode_test.cpp ../core/mnode.h \
+tests.o: tests.cpp ../core/mnode.h \
 		../lenassert.h \
 		../glm/glm/glm.hpp \
 		../glm/glm/detail/_fixes.hpp \
@@ -1604,7 +1604,7 @@ mnode_test.o: mnode_test.cpp ../core/mnode.h \
 		../glm/glm/gtx/wrap.inl \
 		../glm/glm/gtx/scalar_multiplication.hpp \
 		../glm/glm/gtx/range.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mnode_test.o mnode_test.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tests.o tests.cpp
 
 ####### Install
 
