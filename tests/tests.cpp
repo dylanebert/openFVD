@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../core/mnode.h"
+#include "../core/section.h"
 
 mnode createTestNode()
 {
@@ -16,6 +17,7 @@ mnode createTestNode()
     return node;
 }
 
+#pragma region MNodeTest
 TEST(MNodeTest, Constructor)
 {
     mnode testNode = createTestNode();
@@ -132,6 +134,11 @@ TEST(MNodeTest, LateralToHeart)
     ASSERT_NEAR(expectedLateralHeart.x, lateralHeart.x, 0.0001f);
     ASSERT_NEAR(expectedLateralHeart.y, lateralHeart.y, 0.0001f);
     ASSERT_NEAR(expectedLateralHeart.z, lateralHeart.z, 0.0001f);
+}
+#pragma endregion
+
+TEST(SectionTest, Constructor)
+{
 }
 
 int main(int argc, char **argv)
