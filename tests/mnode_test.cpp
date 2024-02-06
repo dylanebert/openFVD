@@ -65,6 +65,75 @@ TEST(MNodeTest, SetAndUpdateRoll)
     ASSERT_NEAR(expectedRoll, node.fRoll, 0.0001f);
 }
 
+TEST(MNodeTest, ChangePitch)
+{
+    mnode node = createTestNode();
+    float delta = 20.0f;
+    bool inverted = false;
+
+    glm::vec3 expectedDirection = glm::vec3(0.320249f, 0.816505f, 0.480374f);
+    glm::vec3 expectedLateral = glm::vec3(-0.848969f, 0.114520f, 0.515884f);
+    glm::vec3 expectedNormal = glm::vec3(0.366210f, -0.573035f, 0.729863f);
+
+    node.changePitch(delta, inverted);
+
+    ASSERT_NEAR(expectedDirection.x, node.vDir.x, 0.0001f);
+    ASSERT_NEAR(expectedDirection.y, node.vDir.y, 0.0001f);
+    ASSERT_NEAR(expectedDirection.z, node.vDir.z, 0.0001f);
+    ASSERT_NEAR(expectedLateral.x, node.vLat.x, 0.0001f);
+    ASSERT_NEAR(expectedLateral.y, node.vLat.y, 0.0001f);
+    ASSERT_NEAR(expectedLateral.z, node.vLat.z, 0.0001f);
+    ASSERT_NEAR(expectedNormal.x, node.vNorm.x, 0.0001f);
+    ASSERT_NEAR(expectedNormal.y, node.vNorm.y, 0.0001f);
+    ASSERT_NEAR(expectedNormal.z, node.vNorm.z, 0.0001f);
+}
+
+TEST(MNodeTest, ChangeYaw)
+{
+    mnode node = createTestNode();
+    float delta = 20.0f;
+
+    glm::vec3 expectedDirection = glm::vec3(0.662213f, 0.569803f, 0.486620f);
+    glm::vec3 expectedLateral = glm::vec3(-0.587739f, 0.121869f, 0.799819f);
+
+    node.changeYaw(delta);
+
+    ASSERT_NEAR(expectedDirection.x, node.vDir.x, 0.0001f);
+    ASSERT_NEAR(expectedDirection.y, node.vDir.y, 0.0001f);
+    ASSERT_NEAR(expectedDirection.z, node.vDir.z, 0.0001f);
+    ASSERT_NEAR(expectedLateral.x, node.vLat.x, 0.0001f);
+    ASSERT_NEAR(expectedLateral.y, node.vLat.y, 0.0001f);
+    ASSERT_NEAR(expectedLateral.z, node.vLat.z, 0.0001f);
+}
+
+TEST(MNodeTest, DirectionToHeart)
+{
+    mnode node = createTestNode();
+    float heart = 1.1f;
+
+    glm::vec3 expectedDirectionHeart = glm::vec3(0.455842f, 0.569803f, 0.683764f);
+
+    glm::vec3 directionHeart = node.vDirHeart(heart);
+
+    ASSERT_NEAR(expectedDirectionHeart.x, directionHeart.x, 0.0001f);
+    ASSERT_NEAR(expectedDirectionHeart.y, directionHeart.y, 0.0001f);
+    ASSERT_NEAR(expectedDirectionHeart.z, directionHeart.z, 0.0001f);
+}
+
+TEST(MNodeTest, LateralToHeart)
+{
+    mnode node = createTestNode();
+    float heart = 1.1f;
+
+    glm::vec3 expectedLateralHeart = glm::vec3(-0.825848f, 0.121869f, 0.550566f);
+
+    glm::vec3 lateralHeart = node.vLatHeart(heart);
+
+    ASSERT_NEAR(expectedLateralHeart.x, lateralHeart.x, 0.0001f);
+    ASSERT_NEAR(expectedLateralHeart.y, lateralHeart.y, 0.0001f);
+    ASSERT_NEAR(expectedLateralHeart.z, lateralHeart.z, 0.0001f);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
