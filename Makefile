@@ -6659,17 +6659,17 @@ track.o: core/track.cpp core/track.h \
 		core/secnlcsv.h \
 		core/sectionhandler.h \
 		core/exportfuncs.h \
-		ui/optionsmenu.h \
 		ui/mainwindow.h \
 		renderer/glviewwidget.h \
 		core/trackhandler.h \
 		core/saver.h \
 		ui/projectwidget.h \
+		ui/optionsmenu.h \
 		core/smoothhandler.h \
-		renderer/trackmesh.h \
 		ui/smoothui.h \
 		ui/graphwidget.h \
 		ui/graphhandler.h \
+		renderer/trackmesh.h \
 		ui/trackwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o track.o core/track.cpp
 
@@ -15584,16 +15584,16 @@ trackwidget.o: ui/trackwidget.cpp ui/trackwidget.h \
 		renderer/glviewwidget.h \
 		ui/graphwidget.h \
 		ui/graphhandler.h \
-		ui_trackwidget.h \
-		ui/myqdoublespinbox.h \
-		ui/mytreewidget.h \
-		ui/optionsmenu.h \
-		core/undohandler.h \
-		core/undoaction.h \
 		ui/mainwindow.h \
 		core/saver.h \
 		ui/projectwidget.h \
-		renderer/trackmesh.h
+		ui/optionsmenu.h \
+		renderer/trackmesh.h \
+		ui_trackwidget.h \
+		ui/myqdoublespinbox.h \
+		ui/mytreewidget.h \
+		core/undohandler.h \
+		core/undoaction.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o trackwidget.o ui/trackwidget.cpp
 
 trackproperties.o: ui/trackproperties.cpp core/track.h \
