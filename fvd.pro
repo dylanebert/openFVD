@@ -27,6 +27,7 @@
 # lib3ds
 
 CONFIG	+= qt
+CONFIG  += c++17
 QT       += core gui widgets printsupport opengl
 DEFINES += GLM_ENABLE_EXPERIMENTAL
 
